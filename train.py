@@ -41,9 +41,15 @@ features = sp.eye(A.shape[0])
 labels = torch.LongTensor(np.array(data['label']))
 features = torch.FloatTensor(np.array(features.todense()))
 adj = sparse_mx_to_torch_sparse_tensor(adj)
-idx_train = torch.LongTensor(range(data['train_size']))
-idx_val = torch.LongTensor(range(data['val_size']))
-idx_test = torch.LongTensor(range(data['test_size']))
+idx_train = torch.LongTensor(range(0, data['train_size']))
+idx_val = torch.LongTensor(range(data['train_size'], data['val_size']))
+idx_test = torch.LongTensor(range(data['val_size'], data['test_size']))
+
+print(idx_train)
+print("===================================")
+print(idx_val)
+print("===================================")
+print(idx_test)
 
 
 

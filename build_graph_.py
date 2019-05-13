@@ -308,9 +308,9 @@ f.close()
 data = {}
 data['num_doc'] = len(shuffle_doc_name_list)
 data['label'] = label_list
-data['train_size'] = train_size
-data['val_size'] = val_size
-data['test_size'] = test_size
+data['train_size'] = real_train_size
+data['val_size'] = train_size
+data['test_size'] = train_size + test_size
 
 f = open("data/ind.{}.data".format(dataset), 'wb')
 pkl.dump(data, f)
